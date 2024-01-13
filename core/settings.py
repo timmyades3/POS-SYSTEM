@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -154,10 +154,10 @@ MFA_QUICKLOGIN=True
 
 TOKEN_ISSUER_NAME="POS-SYSTEM"      #TOTP Issuer name
 
-if DEBUG:
-  U2F_APPID="https://localhost"    #URL For U2F
-  FIDO_SERVER_ID=u"localhost"      # Server rp id for FIDO2, it the full domain of your project
-else:
+#if DEBUG:
+  #U2F_APPID="https://localhost"    #URL For U2F
+  #FIDO_SERVER_ID=u"localhost"      # Server rp id for FIDO2, it the full domain of your project
+#else:
   U2F_APPID="https://pos-system-eight.vercel.app"    #URL For U2F
   FIDO_SERVER_ID=u"pos-system-eight.vercel.app"      # Server rp id for FIDO2, it the full domain of your project
 
