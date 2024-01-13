@@ -21,7 +21,7 @@ class index(LoginRequiredMixin, View):
 class Register(View):
     def post(self, request):
         if request.user.is_authenticated:
-            return redirect("index")
+            return redirect("'accounts:index'")
         else:
             form = Createuser(request.POST)
             if form.is_valid():
@@ -48,7 +48,7 @@ class Register(View):
 
     def get(self, request):
         if request.user.is_authenticated:
-            return redirect("index")
+            return redirect("'accounts:index'")
         else:
             form = Createuser()
         return render(request, "register.html", {"form": form})
@@ -67,7 +67,7 @@ def login_user_in(request, username):
 class Login(View):
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect("index")
+            return redirect("'accounts:index'")
         else:
             username = request.POST.get("username")
             password = request.POST.get("password")
@@ -85,7 +85,7 @@ class Login(View):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect("index")
+            return redirect("'accounts:index'")
         return render(request, "login.html")
 
 
