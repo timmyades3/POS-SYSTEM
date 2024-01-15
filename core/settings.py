@@ -159,7 +159,7 @@ if DEBUG:
   FIDO_SERVER_ID=u"localhost"      # Server rp id for FIDO2, it the full domain of your project
 else:
     U2F_APPID="https://pos-system-eight.vercel.app"    #URL For U2F
-    FIDO_SERVER_ID=u"pos-system-eight.vercel.app"      # Server rp id for FIDO2, it the full domain of your project
+    FIDO_SERVER_ID=u"https://pos-system-eight.vercel.app"      # Server rp id for FIDO2, it the full domain of your project
 
 FIDO_SERVER_NAME=u"POS-SYSTEM"
 
