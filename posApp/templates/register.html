@@ -51,7 +51,6 @@
               <div
                 class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-6-tablet">
                 <div class="mdc-card">
-                  <h5 class="mt-2 text-center fs-6 text-danger" style="color: red; text-align: center;   text-decoration: none;">{{ form.errors}}</h5>
                   <form id="register-user" method="post">
                     {% csrf_token %}
                     <div class="mdc-layout-grid">
@@ -92,7 +91,7 @@
                           </button>
                         </div>
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
-                          <p class="mt-2">Already registered? <a href="{% url 'accounts:login' %}">Login here</a></p>
+                          <p class="mt-2">Already registered? <a href="{% url 'login' %}">Login here</a></p>
                         </div>
                       </div>
                     </div>

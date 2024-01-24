@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'mfa',
     'accounts.apps.AccountsConfig',
+    'posApp',
 ]
 
 MIDDLEWARE = [
@@ -87,11 +89,15 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': config('PGDATABASE'),
        'USER': config('PGUSER'),
-      'PASSWORD': config('PGPASSWORD'),
+       'PASSWORD': config('PGPASSWORD'),
        'HOST': config('PGHOST'),
        'PORT': '5432',
+       'OPTIONS': {'sslmode': 'require'},
+
     }
+
 }
+
 
 
 # Password validation
@@ -141,8 +147,9 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGOUT_REDIRECT_URL='accounts:index'
-
+LOGOUT_REDIRECT_URL='accounts:login'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'
 
 
 MFA_UNALLOWED_METHODS=()   # Methods that shouldn't be allowed for the user

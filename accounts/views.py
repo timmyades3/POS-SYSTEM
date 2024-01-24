@@ -10,18 +10,12 @@ from django.contrib import auth
 
 
 # Create your views here.
-class index(LoginRequiredMixin, View):
-    login_url = "/login/"
-    redirect_field_name = "login"
-
-    def get(self, request, *args, **kwargs):
-        return render(request, "index.html")
 
 
 class Register(View):
     def post(self, request):
         if request.user.is_authenticated:
-            return redirect('accounts:index')
+            return redirect('home-page')
         else:
             form = Createuser(request.POST)
             if form.is_valid():
@@ -48,7 +42,7 @@ class Register(View):
 
     def get(self, request):
         if request.user.is_authenticated:
-            return redirect('accounts:index')
+            return redirect('home-page')
         else:
             form = Createuser()
         return render(request, "register.html", {"form": form})
@@ -61,13 +55,13 @@ def login_user_in(request, username):
     if "next" in request.POST:
         return redirect(request.POST.get("next"))
     else:
-        return redirect(reverse('accounts:index'))
+        return redirect(reverse('home-page'))
     
 
 class Login(View):
     def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('accounts:index')
+            return redirect('home-page')
         else:
             username = request.POST.get("username")
             password = request.POST.get("password")
@@ -85,7 +79,7 @@ class Login(View):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('accounts:index')
+            return redirect('home-page')
         return render(request, "login.html")
 
 
@@ -95,7 +89,5 @@ class Logout(LoginRequiredMixin, View):
 
     def get(self, request):
         logout(request)
-        return render(request, "logout.html")
+        return redirect("accounts:login")
 
-
-# Create your views here.

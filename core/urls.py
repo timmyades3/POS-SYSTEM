@@ -23,9 +23,11 @@ import mfa.TrustedDevice
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('mfa/', include('mfa.urls')),
+    path('mfa/', include('mfa.urls')),
     path('devices/add/', mfa.TrustedDevice.add,name="mfa_add_new_trusted_device"),
-    path("", include('accounts.urls', namespace='accounts'))
+    path("", include('accounts.urls', namespace='accounts')),
+    path('', include('posApp.urls')),
+
 ]
 
 if settings.DEBUG:

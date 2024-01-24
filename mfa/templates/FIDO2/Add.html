@@ -43,20 +43,20 @@
         function (res) {
           if (res["status"] == "OK")
             $("#res").html(
-              "<div class='alert alert-success'>Registered Successfully, <a href='{% url 'accounts:index' %}'> Go to Security Home</a></div>"
+              "<div class='alert alert-success'>Registered Successfully, <a href='{% url 'home-page' %}'> Go to Security Home</a></div>"
             );
           else
             $("#res").html(
               "<div class='alert alert-danger'>Registeration Failed as " +
                 res["message"] +
-                ", <a href='javascript:void(0)' onclick='begin_reg()'> try again or <a href='{% url 'accounts:index' %}'> Go Home</a></div>"
+                ", <a href='javascript:void(0)' onclick='begin_reg()'> try again or <a href='{% url 'home-page' %}'> Go Home</a></div>"
             );
         },
         function (reason) {
           $("#res").html(
             "<div class='alert alert-danger'>Registeration Failed as " +
               reason +
-              ", <a href='javascript:void(0)' onclick='begin_reg()'> try again </a> or <a href='{% url 'accounts:index' %}'> Go Home</a></div>"
+              ", <a href='javascript:void(0)' onclick='begin_reg()'> try again </a> or <a href='{% url 'home-page' %}'> Go Home</a></div>"
           );
         }
       );
