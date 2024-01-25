@@ -49,14 +49,14 @@
             $("#res").html(
               "<div class='alert alert-danger'>Registeration Failed as " +
                 res["message"] +
-                ", <a href='javascript:void(0)' onclick='begin_reg()'> try again or <a href='{% url 'home-page' %}'> Go Home</a></div>"
+                ", <a href='{% url 'start_fido2' %}'> try again or <a href='{% url 'home-page' %}'> Go Home</a></div>"
             );
         },
         function (reason) {
           $("#res").html(
             "<div class='alert alert-danger'>Registeration Failed as " +
               reason +
-              ", <a href='javascript:void(0)' onclick='begin_reg()'> try again </a> or <a href='{% url 'home-page' %}'> Go Home</a></div>"
+              ", <a href='{% url 'start_fido2' %}'> try again </a> or <a href='{% url 'home-page' %}'> Go Home</a></div>"
           );
         }
       );
