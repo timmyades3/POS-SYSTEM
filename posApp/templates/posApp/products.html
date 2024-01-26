@@ -34,7 +34,7 @@
                 <tbody>
                     {% for product in products %}
                     <tr>
-                        <td class="px-2 py-1 text-center">#</td>
+                        <td class="px-2 py-1 text-center">{{ product.id }}</td>
                         <td class="px-2 py-1 text-start">{{ product.category_id }}</td>
                         <td class="px-2 py-1 text-start">{{ product.code }} - {{ product.name }}</td>
                         <td class="px-2 py-1 text-start">{{ product.description }}</td>
