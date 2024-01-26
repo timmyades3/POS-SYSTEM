@@ -67,14 +67,17 @@ class Login(View):
             password = request.POST.get("password")
 
             user = authenticate(request, username=username, password=password)
+            user_exist=User.objects.filter(username=username).exists()
             if user is not None:
                 from mfa.helpers import has_mfa
                 res =  has_mfa(username = username,request=request) # has_mfa returns false or HttpResponseRedirect
                 if res:
                     return res
                 return login_user_in(request,username=user.username)     
+            elif user is None and user_exist == True: 
+                error_message ='Incorrect password.' 
             elif user is None:
-                error_message = "User does not exist."
+                error_message = "User does not exist."    
         return render(request, "login.html", {"error_message": error_message})
 
     def get(self, request, *args, **kwargs):

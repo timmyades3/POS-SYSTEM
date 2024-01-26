@@ -10,6 +10,20 @@
         <div class="mdc-list-group">
             <nav class="mdc-list mdc-drawer-menu">
                 <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link">
+                        <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
+                            aria-hidden="true"><span class="material-symbols-outlined">
+                                account_circle
+                                </span></i> {{ user.username }}
+                    </a>
+                </div>
+                <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href=" {% url 'accounts:logout' %}">
+                        <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon"
+                            aria-hidden="true">exit_to_app</i> Logout
+                    </a>
+                </div>
+                <div class="mdc-list-item mdc-drawer-item">
                     <a class="mdc-drawer-link" href="{% url 'home-page' %}">
                         <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i> Home
                     </a>
@@ -21,7 +35,7 @@
                 </div>
                 <div class="mdc-list-item mdc-drawer-item">
                     <a class="mdc-drawer-link" href="{% url 'product-page' %}">
-                        <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">label</i> Product List
+                        <i class="material-icons mdc-list-item_ _start-detail mdc-drawer-item-icon" aria-hidden="true">label</i> Product List
                     </a>
                 </div>
                 <div class="mdc-list-item mdc-drawer-item">

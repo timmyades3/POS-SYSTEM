@@ -1,0 +1,17 @@
+ 
+a{
+  text-decoration: none;
+  color: navy;
+}
+
+.errorlist{
+  list-style-type: none;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  min-width:300px;
+}

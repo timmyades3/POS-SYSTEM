@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{% static 'posapp1/assets/material-admin/vendors/jvectormap/jquery-jvectormap.css' %}">
   <!-- End plugin css for this page -->
   <!-- Layout styles -->
+  <link rel="stylesheet" href="{% static 'register.css' %}">
   <link rel="stylesheet" href="{% static 'posapp1/assets/material-admin/css/demo/style.css' %}">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="{% static 'posapp1/assets/material-admin/images/favicon.png' %}" />
@@ -39,11 +40,18 @@
         <main class="auth-page">
           <div class="mdc-layout-grid">
             <div class="mdc-layout-grid__inner justify-content-center">
+              <div class="mdc-layout-grid__cell--span-12">
+                <div class="mdc-card mb-5">
+                  <h3 class="text-center">Point Of Sale System</h3>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="mdc-layout-grid__inner justify-content-center">
               <div class="mdc-layout-grid__cell--span-2-desktop"></div>
               <div class="mdc-card mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-1-tablet mb-5">
                 <h3 class="text-center">Point Of Sale System</h3>
               </div>
-            </div>
+            </div> -->
             <div class="mdc-layout-grid__inner">
               <div
                 class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-1-tablet">
@@ -51,11 +59,13 @@
               <div
                 class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-6-tablet">
                 <div class="mdc-card">
-                  <h5 class="mt-2 text-center fs-6 text-danger" style="color: red; text-align: center;   text-decoration: none;">{{ form.errors}}</h5>
                   <form id="register-user" method="post">
                     {% csrf_token %}
                     <div class="mdc-layout-grid">
                       <div class="mdc-layout-grid__inner">
+                        {% if form.errors.username %}
+                        <h6 class=" fs-6 text-danger" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.username }}</h6>
+                        {% endif %}
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="username" id="text-field-username">
@@ -63,6 +73,9 @@
                             <label for="text-field-username" class="mdc-floating-label">Username</label>
                           </div>
                         </div>
+                        {% if form.errors.email %}
+                        <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.email }}</h6>
+                        {% endif %}
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="email" id="text-field-email">
@@ -70,6 +83,9 @@
                             <label for="text-field-email" class="mdc-floating-label">Email</label>
                           </div>
                         </div>
+                        {% if form.errors.password %}
+                        <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.password }}</h6>
+                        {% endif %}
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="password1" type="password"
@@ -78,6 +94,9 @@
                             <label for="text-field-password" class="mdc-floating-label">Password</label>
                           </div>
                         </div>
+                        {% if form.errors.password2 %}
+                        <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.password2 }}</h6>
+                        {% endif %}
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="password2" type="password"
