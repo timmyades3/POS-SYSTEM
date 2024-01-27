@@ -63,9 +63,9 @@
                     {% csrf_token %}
                     <div class="mdc-layout-grid">
                       <div class="mdc-layout-grid__inner">
-                        {% if form.errors.username %}
+                        <!-- {% if form.errors.username %}
                         <h6 class=" fs-6 text-danger" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.username }}</h6>
-                        {% endif %}
+                        {% endif %} -->
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="username" id="text-field-username">
@@ -73,9 +73,9 @@
                             <label for="text-field-username" class="mdc-floating-label">Username</label>
                           </div>
                         </div>
-                        {% if form.errors.email %}
+                        <!-- {% if form.errors.email %}
                         <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.email }}</h6>
-                        {% endif %}
+                        {% endif %} -->
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="email" id="text-field-email">
@@ -83,9 +83,9 @@
                             <label for="text-field-email" class="mdc-floating-label">Email</label>
                           </div>
                         </div>
-                        {% if form.errors.password %}
+                        <!-- {% if form.errors.password %}
                         <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.password }}</h6>
-                        {% endif %}
+                        {% endif %} -->
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="password1" type="password"
@@ -94,9 +94,9 @@
                             <label for="text-field-password" class="mdc-floating-label">Password</label>
                           </div>
                         </div>
-                        {% if form.errors.password2 %}
+                        <!-- {% if form.errors.password2 %}
                         <h6 class="fs-6 text-danger w-100" style="color: red; list-style-type: none; margin-bottom: 0;">{{ form.errors.password2 }}</h6>
-                        {% endif %}
+                        {% endif %} -->
                         <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
                           <div class="mdc-text-field w-100">
                             <input class="mdc-text-field__input" name="password2" type="password"
