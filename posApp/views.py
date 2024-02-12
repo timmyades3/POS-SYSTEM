@@ -111,20 +111,20 @@ def home(request):
          date_added__year=current_year,
          date_added__month = current_month,
          date_added__day = current_day
-     ))
-     today_sales = Sales.objects.filter(
+    ))
+    today_sales = Sales.objects.filter(
          date_added__year=current_year,
          date_added__month = current_month,
          date_added__day = current_day
-     ).all()
-     total_sales = sum(today_sales.values_list('grand_total',flat=True))
-     context = {
+    ).all()
+    total_sales = sum(today_sales.values_list('grand_total',flat=True))
+    context = {
          'page_title':'Home',
          'categories' : categories,
          'products' : products,
          'transaction' : transaction,
          'total_sales' : total_sales,
-     }
+    }
     return render(request, 'posApp/404page.html', context)
 
 
